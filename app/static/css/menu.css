@@ -1,0 +1,29 @@
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Используем Flexbox */
+    justify-content: space-around; /* Распределяем элементы равномерно */
+}
+
+nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav li a:hover {
+    background-color: green;
+}
+
+nav li a.active {
+    background-color: #4CAF50;
+}
+

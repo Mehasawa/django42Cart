@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load static %}
+    {% block head %}
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href={% static 'css/menu.css' %}>
+    <link rel="stylesheet" href={% static 'css/cabinet.css' %}>
+    {% endblock %}
+{% block content %}
+<h2>Кабинет</h2>
+    <h3>Добро пожаловать {{ user.username }}</h3>
+    <h3>EMAIL: {{ user.email }}</h3>
+    <h3>Ваши заказы:</h3>
+    <table>
+    <tr>
+        <th>Дата</th>
+        <th>Адрес</th>
+        <th>Телефон</th>
+        <th>Итог</th>
+        <th>Статус</th>
+    </tr>
+    {% for one in orders %}
+        <td>{{ one.date }}</td>
+        <td>{{ one.adres }}</td>
+        <td>{{ one.tel }}</td>
+        <td>{{ one.total }}</td>
+        <td>{{ one.status }}</td>
+        <td>
+        <button>Подробнее</button>
+        </td>
+    {% endfor %}
+    </table>
+{% endblock %}

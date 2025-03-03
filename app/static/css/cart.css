@@ -1,0 +1,94 @@
+table {
+  width: 100%; /* Занимает всю доступную ширину */
+  border-collapse: collapse; /* Объединяет границы ячеек */
+  margin-bottom: 20px; /* Отступ снизу */
+  font-size: 1em;  /* Задаем размер шрифта для всей таблицы */
+    color: white;
+}
+
+th,
+td {
+  padding: 8px; /* Внутренние отступы в ячейках */
+  text-align: left; /* Выравнивание текста по левому краю */
+  border-bottom: 1px solid #ddd; /* Тонкая линия снизу ячеек */
+}
+
+th {
+  background-color: #f2f2f2; /* Светло-серый фон для заголовков */
+  font-weight: bold; /* Жирный шрифт для заголовков */
+}
+
+tr:nth-child(even) {
+  background-color: lightseagreen; /* Чересстрочная расцветка (для четных строк) */
+}
+
+/* При наведении на строку */
+tr:hover {
+  background-color: #eee; /* Цвет фона при наведении */
+}
+
+.zakazbtn {
+    width: 150px;
+    height: 75px;
+    color: white;
+    background-color: limegreen;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+    padding: 30px;
+    background-color: #333; /* Темный фон */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Более выраженная тень */
+    color: #fff; /* Светлый текст */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #ccc;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #555; /* Темная рамка */
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #444; /* Еще более темный фон для полей */
+    color: #fff; /* Светлый текст для полей */
+    font-family: sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #888; /* Более светлая рамка при фокусе */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Светлая тень при фокусе */
+}
+
+button[type="submit"] {
+    background-color: #555;
+    color: white;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #777;
+}

@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load static %}
+    {% block head %}
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href={% static 'css/menu.css' %}>
+    <link rel="stylesheet" href={% static 'css/cart.css' %}>
+    {% endblock %}
+{% block content %}
+<h2>Корзина</h2>
+    
+    <table>
+    {% for one in items %}
+    <tr> 
+        <td>{{ one.tovar.name }}</td>
+        <td>
+            <img src="{% static one.tovar.image %}" alt="">
+        </td>
+        <td>
+            <button> - </button>
+        </td>
+        <td>{{ one.count }}</td>
+        <td>
+            <button> + </button>
+        </td>
+        <td>{{ one.summa }}</td>
+        <td>
+            <button>Удалить</button>
+        </td>
+    </tr>
+    
+    {% endfor %}
+    </table>
+    <h3>Итог: {{ total }}</h3>
+    <hr>
+    <button class="zakazbtn">Оформить заказ</button>
+    <form action=""></form>
+{% endblock %}

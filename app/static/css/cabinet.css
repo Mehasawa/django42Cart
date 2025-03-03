@@ -1,0 +1,36 @@
+table {
+  width: 100%; /* Занимает всю доступную ширину */
+  border-collapse: collapse; /* Объединяет границы ячеек */
+  margin-bottom: 20px; /* Отступ снизу */
+  font-size: 1em;  /* Задаем размер шрифта для всей таблицы */
+}
+
+th,
+td {
+  padding: 8px; /* Внутренние отступы в ячейках */
+  text-align: left; /* Выравнивание текста по левому краю */
+  border-bottom: 1px solid #ddd; /* Тонкая линия снизу ячеек */
+}
+
+th {
+  background-color: #f2f2f2; /* Светло-серый фон для заголовков */
+  font-weight: bold; /* Жирный шрифт для заголовков */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Чересстрочная расцветка (для четных строк) */
+}
+
+/* При наведении на строку */
+tr:hover {
+  background-color: #eee; /* Цвет фона при наведении */
+}
+
+h3 {
+  font-size: 1.5em; /* Размер шрифта (можно настроить) */
+  font-weight: lighter; /* Жирный шрифт */
+  color: #333; /* Темно-серый цвет текста */
+  margin-bottom: 15px; /* Отступ снизу */
+  padding-bottom: 5px; /* Отступ снизу (для линии) */
+  border-bottom: 2px solid #ccc; /* Тонкая линия снизу */
+}
