@@ -18,8 +18,10 @@
         <th>Телефон</th>
         <th>Итог</th>
         <th>Статус</th>
+        <th></th>
     </tr>
     {% for one in orders %}
+        <tr>
         <td>{{ one.date }}</td>
         <td>{{ one.adres }}</td>
         <td>{{ one.tel }}</td>
@@ -28,6 +30,7 @@
         <td>
         <button>Подробнее</button>
         </td>
+        </tr>
     {% endfor %}
     </table>
 {% endblock %}

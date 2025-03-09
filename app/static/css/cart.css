@@ -3,28 +3,25 @@ table {
   border-collapse: collapse; /* Объединяет границы ячеек */
   margin-bottom: 20px; /* Отступ снизу */
   font-size: 1em;  /* Задаем размер шрифта для всей таблицы */
-    color: white;
+    color: black;
 }
 
-th,
+
 td {
   padding: 8px; /* Внутренние отступы в ячейках */
   text-align: left; /* Выравнивание текста по левому краю */
   border-bottom: 1px solid #ddd; /* Тонкая линия снизу ячеек */
+  width: 200px;
 }
 
-th {
-  background-color: #f2f2f2; /* Светло-серый фон для заголовков */
-  font-weight: bold; /* Жирный шрифт для заголовков */
+td button{
+     width: 80px;
+    height: 40px;
 }
 
 tr:nth-child(even) {
   background-color: lightseagreen; /* Чересстрочная расцветка (для четных строк) */
-}
-
-/* При наведении на строку */
-tr:hover {
-  background-color: #eee; /* Цвет фона при наведении */
+    color: white;
 }
 
 .zakazbtn {
@@ -33,6 +30,10 @@ tr:hover {
     color: white;
     background-color: limegreen;
     margin-bottom: 20px;
+}
+
+img {
+    width: 50%;
 }
 
 form {
@@ -67,6 +68,14 @@ select {
     color: #fff; /* Светлый текст для полей */
     font-family: sans-serif;
 }
+input[type="checkbox"]{
+    border: 4px solid green;
+      background: limegreen;
+    border-radius: 25px;
+    width: 10em;
+  height: 10em;
+    margin-bottom: 20px;
+}
 
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -78,7 +87,7 @@ select:focus {
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Светлая тень при фокусе */
 }
 
-button[type="submit"] {
+input[type="submit"] {
     background-color: #555;
     color: white;
     padding: 14px 22px;
@@ -89,6 +98,6 @@ button[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
+input[type="submit"]:hover {
     background-color: #777;
 }

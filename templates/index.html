@@ -45,7 +45,10 @@
             <img src={% static one.image %}  alt="">
             <h3>{{ one.name }}</h3>
             <p>{{ one.price }}</p>
-            <button>в корзину</button>
+            <a href="{% url 'buy' one.category.name one.id%}">
+                <button>в корзину</button>
+            </a>
+            
         </div>
         {% endfor %}
        </div> 
