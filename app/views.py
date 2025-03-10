@@ -30,11 +30,11 @@ def cart(request):
             k2 = form.cleaned_data['telephone']
             zakaz=''
             for one in items:
-                zakaz+=one.tovar.name + ' '+ str(one.count)+ ' '+str(one.summa) + '\n'
-            zakaz+='Всего '+ str(total) + '\n'
-            zakaz += 'Адрес ' + k1 + '\n'
-            zakaz += 'Телефон ' + k2 + '\n'
-            zakaz += 'Пользователь ' + request.user.username + '\n'
+                zakaz+=one.tovar.name + ' '+ str(one.count)+ ' '+str(one.summa) + '<br>'
+            zakaz+='Всего '+ str(total) + '<br>'
+            zakaz += 'Адрес ' + k1 + '<br>'
+            zakaz += 'Телефон ' + k2 + '<br>'
+            zakaz += 'Пользователь ' + request.user.username + '<br>'
             status = Status.objects.get(id=1)
             Order.objects.create(adres=k1,tel=k2, user_id=request.user.id,
                                  total=total, status=status,

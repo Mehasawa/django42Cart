@@ -5,6 +5,7 @@
     <title>Profile</title>
     <link rel="stylesheet" href={% static 'css/menu.css' %}>
     <link rel="stylesheet" href={% static 'css/cabinet.css' %}>
+        <script src="{% static 'js/cabinet.js' %}" defer></script>
     {% endblock %}
 {% block content %}
 <h2>Кабинет</h2>
@@ -28,7 +29,8 @@
         <td>{{ one.total }}</td>
         <td>{{ one.status }}</td>
         <td>
-        <button>Подробнее</button>
+                <button onclick="f1('{{ one.id }}','{{ one.zakaz }}')">Подробнее</button>
+            <p id="{{ one.id }}"></p>
         </td>
         </tr>
     {% endfor %}
