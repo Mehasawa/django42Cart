@@ -1,4 +1,3 @@
-from datetime import timezone
 
 from django.shortcuts import render,redirect
 from .models import *
