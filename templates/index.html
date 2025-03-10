@@ -27,12 +27,18 @@
          <li>
             <a href="{% url 'catalog' 'Для дома' %}">Для дома</a>
         </li>
+        {% if user.is_authenticated %}
          <li>
             <a href="{% url 'cabinet' %}">Кабинет</a>
         </li>
          <li>
             <a href="{% url 'cart' %}">Корзина</a>
         </li>
+        {% else %}
+         <li>
+            <a href="">Вход</a>
+        </li>
+        {% endif %}
     </ul>
     </nav>
     {% endblock %}
@@ -44,11 +50,12 @@
         <div class="card">
             <img src={% static one.image %}  alt="">
             <h3>{{ one.name }}</h3>
-            <p>{{ one.price }}</p>
+            <p>{{ one.price }} руб</p>
+             {% if user.is_authenticated %}
             <a href="{% url 'buy' one.category.name one.id%}">
                 <button>в корзину</button>
             </a>
-            
+            {% endif %}
         </div>
         {% endfor %}
        </div> 

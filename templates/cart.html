@@ -5,6 +5,7 @@
     <title>Profile</title>
     <link rel="stylesheet" href={% static 'css/menu.css' %}>
     <link rel="stylesheet" href={% static 'css/cart.css' %}>
+        <script src="{% static 'js/cart.js' %}" defer></script>   
     {% endblock %}
 {% block content %}
 <h2>Корзина</h2>
@@ -44,8 +45,8 @@
     </table>
     <h3>Итог: {{ total }}</h3>
     <hr>
-    <button class="zakazbtn">Оформить заказ</button>
-    <form action="" method="post">
+    <button class="zakazbtn" id="but1">Оформить заказ</button>
+    <form action="" method="post" hidden id="form1">
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Оформить">
