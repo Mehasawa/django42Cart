@@ -14,7 +14,7 @@
     margin-bottom: 10px;
 }
 
-.card img{
+.card .cardimg{
     width: 80%;
 }
 
@@ -23,4 +23,9 @@
     height: 75px;
     color: white;
     background-color: limegreen;
+}
+
+.card .like {
+    width: 10%;
+    display:block ;
 }

@@ -8,7 +8,8 @@
     <title>HOME</title>
     <link rel="stylesheet" href={% static 'css/catalog.css' %}>
     <link rel="stylesheet" href={% static 'css/menu.css' %}>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="{% static 'js/index.js' %}" defer></script>
     {% endblock %}
 </head>
 <body>
@@ -48,13 +49,19 @@
         <div class="main-catalog">
     {% for one in items %}
         <div class="card">
-            <img src={% static one.image %}  alt="">
+            <img src={% static one.image %}  alt="" class="cardimg">
             <h3>{{ one.name }}</h3>
             <p>{{ one.price }} руб</p>
              {% if user.is_authenticated %}
             <a href="{% url 'buy' one.category.name one.id%}">
                 <button>в корзину</button>
             </a>
+{#    картинка для лайка #}
+                 {% if one.like_set.values %}
+                 <img class="like" src="{% static 'img/sred.png' %}" id = {{ one.id }}> 
+                     {% else %}
+                 <img class="like" src="{% static 'img/swhite.png' %}" id = {{ one.id }}> 
+                     {% endif %}
             {% endif %}
         </div>
         {% endfor %}

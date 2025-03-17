@@ -45,3 +45,7 @@ class Order(models.Model):
 
     def __str__(self):
         return f'{self.date} --- {self.adres}'
+
+class Like(models.Model):
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE)
+    tovar = models.ForeignKey(to=Tovar, on_delete=models.CASCADE)

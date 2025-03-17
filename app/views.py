@@ -1,6 +1,7 @@
 from datetime import timezone
 
 from django.shortcuts import render,redirect
+from django.http import HttpResponse, JsonResponse
 from .models import *
 from .forms import *
 import datetime
@@ -52,7 +53,9 @@ def cart(request):
 
 def cabinet(request):
     orders = Order.objects.filter(user_id=request.user.id)
-    data = {'orders':orders}
+    likes = Like.objects.filter(user_id=request.user.id)
+    print(likes)
+    data = {'orders':orders, 'likes':likes}
     return render(request, 'cabinet.html',data)
 
 def buy(request,cat,itemid):
@@ -92,4 +95,15 @@ def telegram(message):
     bot = telebot.TeleBot(token)
     bot.send_message(chat, message)
 
+def tolike(request):
+    if request.GET:
+        k1 = request.GET.get('k1')
+        k2 = request.GET.get('k2')
+        print(k1,k2)
+        if Like.objects.filter(user_id=request.user.id,tovar_id=k1):
+            item = Like.objects.get(user_id=request.user.id,tovar_id=k1)
+            item.delete()
+        else:
+            Like.objects.create(user_id=request.user.id,tovar_id=k1)
+        return JsonResponse({'message':'успешно'})
 

@@ -9,6 +9,12 @@
     {% endblock %}
 {% block content %}
 <h2>Кабинет</h2>
+    <p>Ваши любимые товары:</p>
+    {%  for one in likes %}
+        <p>
+        {{ one.tovar.name }}
+        </p>
+    {% endfor %}
     <h3>Добро пожаловать {{ user.username }}</h3>
     <h3>EMAIL: {{ user.email }}</h3>
     <h3>Ваши заказы:</h3>
